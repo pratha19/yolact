@@ -174,10 +174,10 @@ pascal_sbd_dataset = dataset_base.copy({
 
 maps_dataset = dataset_base.copy({
   'name': 'Omdena - Satellite imagery',
-  'train_info': 'yolact/data/train/annotation.json',
-  'train_images': 'yolact/data/train/images/',
-  'valid_info': 'yolact/data/val/annotation.json',
-  'valid_images': 'yolact/data/val/images/',
+  'train_info': 'data/train/annotation.json',
+  'train_images': 'data/train/images/',
+  'valid_info': 'data/val/annotation.json',
+  'valid_images': 'data/val/images/',
   'class_names': ('Flat', 'Hip', 'Shed'),
   'label_map': { 1:  1 }
 })
