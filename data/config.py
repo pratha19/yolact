@@ -179,7 +179,7 @@ maps_dataset = dataset_base.copy({
   'valid_info': 'data/val/annotation.json',
   'valid_images': 'data/val/images/',
   'class_names': ('Flat', 'Hip', 'Shed'),
-  'label_map': { 1:  1 }
+  'label_map': None
 })
 
 
