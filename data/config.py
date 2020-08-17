@@ -784,6 +784,16 @@ yolact_resnet50_maps_config = yolact_resnet50_config.copy({
     'max_size': 512,
 })
 
+yolact_resnet101_maps_config = yolact_base_config.copy({
+    'name': 'yolact_plus_resnet101_maps',
+    # Dataset stuff
+    'dataset': maps_dataset,
+    'num_classes': len(maps_dataset.class_names) + 1,
+
+    # Image Size
+    'max_size': 512,
+})
+
 # ----------------------- YOLACT++ CONFIGS ----------------------- #
 
 yolact_plus_base_config = yolact_base_config.copy({
