@@ -182,6 +182,15 @@ maps_dataset = dataset_base.copy({
   'label_map': { 1:  1,  2:  2,  3:  3, 4: 4 }
 })
 
+maps_test_dataset = dataset_base.copy({
+  'name': 'Omdena - Satellite imagery test set',
+  'valid_info': './data/test/annotation.json',
+  'valid_images': './data/test/images/',
+  'class_names': ('Flat', 'Hip', 'Shed', 'other'),
+  'has_gt': False,
+  'label_map': { 1:  1,  2:  2,  3:  3, 4: 4 }
+})
+
 
 # ----------------------- TRANSFORMS ----------------------- #
 
