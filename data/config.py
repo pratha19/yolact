@@ -841,6 +841,36 @@ yolact_plus_resnet50_config = yolact_plus_base_config.copy({
     }),
 })
 
+yolact_plus_resnet50_maps_config = yolact_plus_base_config.copy({
+    'name': 'yolact_plus_resnet50_maps',
+     
+    'backbone': resnet50_dcnv2_backbone.copy({
+        'selected_layers': list(range(1, 4)),
+        
+        'pred_aspect_ratios': [ [[1, 1/2, 2]] ]*5,
+        'pred_scales': [[i * 2 ** (j / 3.0) for j in range(3)] for i in [24, 48, 96, 192, 384]],
+        'use_pixel_scales': True,
+        'preapply_sqrt': False,
+        'use_square_anchors': False,
+    }),
+    # Dataset stuff
+    'dataset': maps_dataset,
+    'num_classes': len(maps_dataset.class_names) + 1,
+
+    # Image Size
+    'max_size': 512,
+})
+
+yolact_plus_resnet101_maps_config = yolact_plus_base_config.copy({
+    'name': 'yolact_plus_resnet101_maps',
+    # Dataset stuff
+    'dataset': maps_dataset,
+    'num_classes': len(maps_dataset.class_names) + 1,
+
+    # Image Size
+    'max_size': 512,
+})
+
 
 # Default config
 cfg = yolact_base_config.copy()
