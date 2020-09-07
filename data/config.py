@@ -846,7 +846,9 @@ yolact_plus_resnet50_maps_config = yolact_plus_resnet50_config.copy({
     # Dataset stuff
     'dataset': maps_dataset,
     'num_classes': len(maps_dataset.class_names) + 1,
-    'max_iter':30000,
+    # Training params
+    'lr_steps': (5000, 10000, 15000, 25000),
+    'max_iter': 30000,
     # Image Size
     'max_size': 512,
 })
@@ -856,7 +858,9 @@ yolact_plus_resnet101_maps_config = yolact_plus_base_config.copy({
     # Dataset stuff
     'dataset': maps_dataset,
     'num_classes': len(maps_dataset.class_names) + 1,
-    'max_iter':30000,
+     # Training params
+    'lr_steps': (5000, 10000, 15000, 25000),
+    'max_iter': 30000,
     # Image Size
     'max_size': 512,
 })
